@@ -1,29 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <title>Object - Car</title>
+        <title>Object Properties</title>
         <meta charset="UTF-8">
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            h1 {
+                color: #43082d;
+            }
+
+            h3, h4 {
+                color: #065b06;
+            }
+
+            p, li {
+                color: #000000;
+                line-height: 1.6;
+            }
+
+            hr {
+                border: 1px solid #3e3c09;
+            }
+        </style>
     </head>
     <body>
-        <h1><u>Car</u></h1>
-        <h2>Car Details</h2>
+        <h1><u>Object Properties</u></h1>
+        <h3>Properties are key:value Pairs. <br>
+            A JavaScript object is a collection of properties. <br>
+            Properties can be changed, added, and deleted.</h3>
+        <hr>
+        <h4>Object properties can be accessed in these ways:</h4>
+            <ul>
+                <li>Dot Notation</li>
+                <li>Bracket Notation</li>
+                <li>Expression</li>
+            </ul>
+    
+        <h3>1. Dot Notation</h3>
+        <p id="dotNotation"></p>
+        <hr>
 
-        <p id="carDetails"></p>
+        <h3>2. Bracket Notation</h3>
+        <p id="bracketNotation"></p>
+        <p id="bracketNot2"></p>
+        <hr>
+
+        <h3>Changing and Adding Object Properties</h3>
+        <P id="changeAndAdd"></P>
+        <hr>
+
+        <h3>Deleting Object Properties</h3>
+        <p id="deleteProperties"></p>
+        <hr>
+
+        <h3>Check if a Property Exists</h3>
+        <p id="checkProperty"></p>
+        <hr>
+
+        <h3>Nested Objects</h3>
+        <p id="nestedObjects"></p>
+        <hr>
+
         <script>
-        // Should declare objects with the "const" keyword.  
-        // Properties are named Values stored as key:value pairs.
+            const person = {
+                firstName: "Annie",
+                lastName: "Johnson",
+                age: 25
+            };
+
+            document.getElementById("dotNotation").innerHTML = 
+            person.firstName + " is " + person.age; // Dot Notation
+
+            document.getElementById("bracketNotation").innerHTML =
+            person["firstName"] + " is " + person["age"]; // Bracket Notation
+
+        // Bracket Notation:
+            const bird = {
+                type: "Cockatiel",
+                name: "Coco",
+                color: "Grey",
+                age: 5
+            };
+        // Bracket Notation is useful when the property name is stored in a variable:
+            let n1 = "name";
+            let n2 = "type";
+            let n3 = "age";
+            let birdy = bird[n2] + " is " + bird[n1] + " and is " + bird[n3] + " years old.";
+
+            document.getElementById("bracketNot2").innerHTML = birdy;
+
+        // Changing and Adding Object Properties:
             const car = {
                 type: "Fiat",
                 model: "500",
-                color: "White",
-                year: 2020
+                color: "White"
             };
-            
-            // Objectproperties can be accessed using dot notation or bracket notation.
-            // objectName.propertyName
-            // objectName["propertyName"]
-            document.getElementById("carDetails").innerHTML 
-              = "Car Type is: " + car.type + "<br>Car Model is: " + car.model + "<br>Car Color is: " + car.color + "<br>Car Year is: " + car.year;
+
+            car.color = "Red"; // Change a property value
+            car.owner = "Johnson"; // Add a new property
+
+            document.getElementById("changeAndAdd").innerHTML = 
+            "Car Color is: " + car.color +
+            "<br>Car Owner is: " + car.owner;    
+
+        // Deleting Object Properties:
+
+        // The "delete" keyword deletes both the value and the property.
+        // After deleting, the property is removed. Accessing it will return "undefined".
+            const bike = {
+                type: "Mountain Bike",
+                name: "Trek",
+                color: "Black",
+            };
+
+            delete bike.color; // Delete a property
+            // delete bike["color"]; // Delete a property using bracket notation
+
+            document.getElementById("deleteProperties").innerHTML =
+            "<br>Bike Type is: " + bike.type +
+            "<br>Bike Name is: " + bike.name + 
+            "<br>Bike Color is: " + bike.color; // undefined  
+        
+        // Check if a Property Exists:
+
+        // Use the "in" operator to check if a property exists in an object. 
+        // The "in" operator returns true if the property exists, otherwise false.
+            const animal = {
+                type: "Dog",
+                name: "Rocky",
+                color: "Brown"
+            };
+
+            let check1 = "name" in animal; // true
+            let check2 = "age" in animal; // false
+
+            document.getElementById("checkProperty").innerHTML = 
+            "Does the property 'name' exist in the animal object? " + check1 +
+            "<br>Does the property 'age' exist in the animal object? " + check2;
+
+        // Nested Objects:
+        
+        const tree = {
+            state: "Kerala",
+            type: "hybrid",
+            variety: {
+                t1: "Mango",
+                t2: "Jackfruit",
+                t3: "Coconut"
+            }
+        };
+
+        let p1 = "variety"; // property name stored in a variable.
+        let p2 = "t3";
+
+        // Can access nested objects using the "Dot Notation" or the "Bracket Notation".
+        document.getElementById("nestedObjects").innerHTML = 
+        "Tree State is:" + tree.state + "<br>Tree Type is: " + tree.type + 
+        "<br>Tree Variety 1 is: " + tree.variety.t1 + // Dot Notation
+        "<br>Tree Variety 2 is: " + tree["variety"]["t2"]  // Bracket Notation 
+     
+        "<br>Tree Variety 3 is: " + tree[p1][p2]; // Bracket Notation
         </script>
     </body>
 </html>
