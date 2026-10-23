@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Object Display</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #e1eaf5;
+                max-width: 900px;
+                margin: 35px auto;
+                padding: 0 24px;
+                line-height: 1.6;
+            }
+
+            h1, h2 {
+                color: #174a6e;
+                text-align: center;
+                padding-bottom: 8px;
+                border-bottom: 3px solid #5aa6a6;
+            }
+
+            ul {
+                padding-left: 28px;
+            }
+
+            hr {
+                border: 0;
+                border-top: 1px solid #cbd5df;
+                margin: 24px 0;
+            }
+
+            #demo1,
+            #demo2,
+            #demo3,
+            #demo4,
+            #demo5 {
+                background-color: #ffffff;
+                border-left: 4px solid #5aa6a6;
+                padding: 14px 18px;
+                border-radius: 6px;
+                margin: 14px 0;
+                overflow-wrap: anywhere;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Object Display</h1>
+        <h3>Displaying a JavaScript object will output: [object Object].
+        <br>[Object Object] appears when you try to put an object (a data structure with properties) into a context where a string is expected.
+        </h3>
+        <p>- Some solutions to display JavaScript objects are:</p>
+        <ul>
+            <li>Displaying the Object Properties by name</li>
+            <li>Displaying the Object Properties in a Loop</li>
+            <li>Displaying the Object using Object.values()</li>
+            <li>Displaying the Object using JSON.stringify()</li>
+        </ul>
+        <hr>
+
+        <p id = "demo1"></p>
+        <hr>
+
+        <h3>Object Properties by name:</h3>
+        <p id = "demo2"></p>
+        <hr>
+
+        <h3>Object Properties in a Loop:</h3>
+        <p id = "demo3"></p>
+        <hr>
+
+        <h3>Object using Object.values():</h3>
+        <p id = "demo4"></p>
+        <hr>
+
+        <h3>Object using JSON.stringify:</h3>
+        <p id = "demo5"></p>
+        <hr>
+
+        <script>
+        // Creating and Object
+            const person = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 30,
+                city: "New York"
+            };
+
+        // Display Object
+            let text = person;
+
+            document.getElementById("demo1").innerHTML = person;
+
+        // Display Properties
+            let text2 = person.firstName + ", " + person.age + ", " + person.city;
+
+            document.getElementById("demo2").innerHTML = text2;
+
+        // Using a For .. In Loop
+            let text3 = "";
+            for (let x in person) { // x is the Property name.
+                text3 += person[x] + " "; // person[x] is the Property value.
+            };
+
+            document.getElementById("demo3").innerHTML = text3;
+        
+        // Using Object.values() method
+        // Object.values() returns an array of values from an object.
+           const myArray = Object.values(person); // create an Array from the Properties
+           let text4 = myArray.toString(); // Stringify the Array
+
+           document.getElementById("demo4").innerHTML = text4;
+
+        // Using JSON.stringify()
+        // JavaScript objects can be converted to a string with JSON method JSON.stringify().
+        // JSON.stringify() is included in JavaScript and supported in all browsers.
+           let text5 = JSON.stringify(person);
+
+           document.getElementById("demo5").innerHTML = text5;
+
+        </script>
+    </body>
+</html>
