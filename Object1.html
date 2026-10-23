@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Object - Car</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1><u>Car</u></h1>
+        <h2>Car Details</h2>
+
+        <p id="carDetails"></p>
+        <script>
+        // Should declare objects with the "const" keyword.  
+        // Properties are named Values stored as key:value pairs.
+            const car = {
+                type: "Fiat",
+                model: "500",
+                color: "White",
+                year: 2020
+            };
+            
+            // Objectproperties can be accessed using dot notation or bracket notation.
+            // objectName.propertyName
+            // objectName["propertyName"]
+            document.getElementById("carDetails").innerHTML 
+              = "Car Type is: " + car.type + "<br>Car Model is: " + car.model + "<br>Car Color is: " + car.color + "<br>Car Year is: " + car.year;
+        </script>
+    </body>
+</html>

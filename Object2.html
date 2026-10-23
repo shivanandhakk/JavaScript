@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Object - Person</title>
+        <meta charset="UTF-8">  
+    <head> 
+        <body>
+            <h1><u>Person</u></h1>
+            <h2>Person Details</h2>
+
+            <p id="personDetails"></p>
+
+            <script>
+            // Spaces and line breaks are not important. An object literal can span multiple lines:   
+                const person = {
+                    firstName:"Lodovico",
+                    lastName:"Petrarca",
+                    age: 45,
+                    eyeColor: "blue",
+                    place : "Italy"
+                };
+
+            // Create an empty Object
+            /*  const person = {};
+
+            //  Add Properties
+                person.firstName = "Lodovico";
+                person.lastName = "Petrarca";
+                person.age = 45;
+                person.eyeColor = "blue";
+                person.place = "Italy";
+            */
+
+                document.getElementById("personDetails").innerHTML =
+                    "First Name is: " + person.firstName + "<br>Last Name is: " + person.lastName + "<br>Age is: " + person.age +
+                    "<br>Eye Color is: " + person.eyeColor + "<br>Place is: " + person.place;   
+            </script>
+        </body> 
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object - Animal</title>
+        <meta charset="UTF-8">  
+    </head> 
+    <body>
+        <h1><u>Animal</u></h1>
+        <h2>Animal Details</h2>
+
+            <p id="animalDetails"></p>
+
+            <script>
+            // There is no need to use "new Object()".
+            // For readability, simplicity and speed, use an object literal instead.    
+                const animal =  new Object({
+                    type: "Bird",
+                    name: "Cockatiel",
+                    color: "Grey",
+                    age: 5
+                });
+
+                document.getElementById("animalDetails").innerHTML =
+                    "Animal Type is: " + animal.type + "<br>Animal Name is: " + animal.name + 
+                    "<br>Animal Color is: " + animal.color + "<br>Animal Age is: " + animal.age;
+            </script>
+        </body>
+</html>

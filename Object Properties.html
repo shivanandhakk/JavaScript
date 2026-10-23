@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object Properties</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1><u>Object Properties</u></h1>
+        <h3>Properties are key:value Pairs. <br>
+            A JavaScript object is a collection of properties. <br>
+            Properties can be changed, added, and deleted.</h3>
+        <hr>
+        <h4>Object properties can be accessed in these ways:</h4>
+            <ul>
+                <li>Dot Notation</li>
+                <li>Bracket Notation</li>
+                <li>Expression</li>
+            </ul>
+    
+        <h3>1. Dot Notation</h3>
+        <p id="dotNotation"></p>
+
+        <h3>2. Bracket Notation</h3>
+        <p id="bracketNotation"></p>
+        <p id="bracketNot2"></p>
+        <script>
+            const person = {
+                firstName: "Annie",
+                lastName: "Johnson",
+                age: 25
+            };
+
+            document.getElementById("dotNotation").innerHTML = 
+            person.firstName + " is " + person.age;
+
+            document.getElementById("bracketNotation").innerHTML =
+            person["firstName"] + " is " + person["age"];
+
+        // Bracket Notation
+            const bird = {
+                type: "Cockatiel",
+                name: "Coco",
+                color: "Grey",
+                age: 5
+            };
+        // Bracket Notation is useful when the property name is stored in a variable:
+            let n1 = "name";
+            let n2 = "type";
+            let n3 = "age";
+            let birdy = bird[n2] + " is " + bird[n1] + " and is " + bird[n3] + " years old.";
+
+            document.getElementById("bracketNot2").innerHTML = birdy;
+        </script>
+    </body>
+</html>
