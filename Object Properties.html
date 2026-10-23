@@ -3,6 +3,29 @@
     <head>
         <title>Object Properties</title>
         <meta charset="UTF-8">
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            h1 {
+                color: #43082d;
+            }
+
+            h3, h4 {
+                color: #065b06;
+            }
+
+            p, li {
+                color: #000000;
+                line-height: 1.6;
+            }
+
+            hr {
+                border: 1px solid #3e3c09;
+            }
+        </style>
     </head>
     <body>
         <h1><u>Object Properties</u></h1>
@@ -80,7 +103,8 @@
             car.color = "Red"; // Change a property value
             car.owner = "Johnson"; // Add a new property
 
-            document.getElementById("changeAndAdd").innerHTML = "Car Color is: " + car.color +
+            document.getElementById("changeAndAdd").innerHTML = 
+            "Car Color is: " + car.color +
             "<br>Car Owner is: " + car.owner;    
 
         // Deleting Object Properties:
@@ -96,7 +120,8 @@
             delete bike.color; // Delete a property
             // delete bike["color"]; // Delete a property using bracket notation
 
-            document.getElementById("deleteProperties").innerHTML = "<br>Bike Type is: " + bike.type +
+            document.getElementById("deleteProperties").innerHTML =
+            "<br>Bike Type is: " + bike.type +
             "<br>Bike Name is: " + bike.name + 
             "<br>Bike Color is: " + bike.color; // undefined  
         
@@ -113,7 +138,8 @@
             let check1 = "name" in animal; // true
             let check2 = "age" in animal; // false
 
-            document.getElementById("checkProperty").innerHTML = "Does the property 'name' exist in the animal object? " + check1 +
+            document.getElementById("checkProperty").innerHTML = 
+            "Does the property 'name' exist in the animal object? " + check1 +
             "<br>Does the property 'age' exist in the animal object? " + check2;
 
         // Nested Objects:
