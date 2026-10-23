@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Object Methods - Book</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Object Methods</h1>
+        <h4>Object methods are actions that can be performed on objects. <br>
+            A method is a function definition stored as a property value. <br>
+            In an object method, this refers to the object.
+        </h4>
+        <hr>
+
+        <p id="objmethods"></p>
+
+        <script>  
+            const person = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 50,
+                id: 5566,
+                fullName: function() {
+                    return this.firstName + " " + this.lastName;
+                },
+                getId: function() {
+                    return this.id;
+                }
+            };
+
+        // Add a Method:
+            person.nationality = function() {
+                return "American";
+            };    
+        
+        // Access Object Methods:
+        // add "()", Syntax: objectName.methodName()
+        // If you call a method with parentheses, it will execute as a function.
+        // If you call a method without parentheses, it will return the function definition.
+            document.getElementById("objmethods").innerHTML = 
+            "Full Name: " + person.fullName() + 
+            "<br>ID: " + person.getId() +
+            "<br>Nationality: " + person.nationality();
+
+        </script>
+    </body>
+</html>    
