@@ -6,13 +6,21 @@
     </head>
     <body>
         <h1>Object Methods</h1>
-        <h4>Object methods are actions that can be performed on objects. <br>
+        <p>Object methods are actions that can be performed on objects. <br>
             A method is a function definition stored as a property value. <br>
-            In an object method, this refers to the object.
-        </h4>
+            In an object method, <b>"this"</b> refers to the object.
+        </p>
         <hr>
 
-        <p id="objmethods"></p>
+        <p id = "objmethods"></p>
+        <hr>
+
+        <p id = "animsounds"></p>
+        <hr>
+
+        <p id = "demo1"></p>
+        <p id = "demo2"></p>
+        <hr>
 
         <script>  
             const person = {
@@ -21,7 +29,7 @@
                 age: 50,
                 id: 5566,
                 fullName: function() {
-                    return this.firstName + " " + this.lastName;
+                    return (this.firstName + " " + this.lastName).toUpperCase(); // Adding a JS method.
                 },
                 getId: function() {
                     return this.id;
@@ -31,9 +39,10 @@
         // Add a Method:
             person.nationality = function() {
                 return "American";
-            };    
+            };   
         
         // Access Object Methods:
+
         // add "()", Syntax: objectName.methodName()
         // If you call a method with parentheses, it will execute as a function.
         // If you call a method without parentheses, it will return the function definition.
@@ -41,6 +50,46 @@
             "Full Name: " + person.fullName() + 
             "<br>ID: " + person.getId() +
             "<br>Nationality: " + person.nationality();
+
+        // "this" Keyword: 
+        
+        // The this keyword makes it possible to use the same method with different objects.
+        const animal1 = {
+            type: "Dog",
+            name: "Max",
+            age: 5,
+            sound: function() {
+                return this.name + " says Woof!";
+            }
+        };
+
+        const animal2 = {
+            type: "Cat",
+            name: "Whiskers",
+            age: 3,
+            sound: function() {
+                return this.name + " says Meow!";
+            }
+        };
+
+        document.getElementById("animsounds").innerHTML =
+        "Dog: " + animal1.sound() +
+        "<br>Cat: " + animal2.sound();
+     
+        // "this" Alone:
+        // Alone, this refers to the global object. In a web browser, the global object is [object Window].
+        let x = this;
+
+        document.getElementById("demo1").innerHTML =
+        "The value of 'this' alone is: " + x; // object Window
+        // In strict mode, this is 'undefined' when used alone.
+
+        // "this" in a Function:
+        // In a function, the value of this depends on how the function is called.
+        function myfunction() {
+            return this;
+        }
+        document.getElementById("demo2").innerHTML = "This is: " + myfunction();
 
         </script>
     </body>
