@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object Constructors</title>
+        <style>
+            body {
+                background-color: #e1eaf5;
+                font-family: Arial, sans-serif;
+                max-width: 900px;
+                margin: 30px auto;
+                padding: 20px;
+            }
+
+            h1 {
+                color: #174a6e;
+                text-align: center;
+                border-bottom: 2px solid #5aa6a6;
+                padding-bottom: 12px;
+            }
+
+            h3 {
+                margin-top: 25px;
+            }
+
+            hr {
+                border: none;
+                border-top: 1px solid #cbd5df;
+                margin: 22px 0;
+            }
+
+            p {
+                background-color: #ffffff;
+                border-left: 4px solid #5aa6a6;
+                padding: 12px 16px;
+                border-radius: 5px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Built-In Object Constructors</h1>
+        <hr>
+        <p id = "demo"></p>
+        <hr>
+
+        <p>The <b>Math()</b> object is not in the list. <br>
+            Math is a <b>global object</b>. <br>
+            The <b>new</b> keyword cannot be used on Math.</p>
+
+        <script>
+            document.getElementById("demo").innerHTML = 
+            "<p>The typeof new Object() is " + typeof new Object() + "</p>" +
+            "<p>The typeof new Array() is " + typeof new Array() + "</p>" +
+            "<p>The typeof new Map() is " + typeof new Map() + "</p>" +
+            "<p>The typeof new Set() is " + typeof new Set() + "</p>" +
+            "<p>The typeof new Date() is " + typeof new Date() + "</p>" +
+            "<p>The typeof new RegExp() is " + typeof new RegExp() + "</p>" +
+            "<p>The typeof new Function() is " + typeof new Function() + "</p>";
+
+        </script>
+    </body>
+</html>
