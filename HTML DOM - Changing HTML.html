@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Changing HTML</title>
+    </head>
+    <body>
+        <h2><u>Changing HTML Content</u></h2>
+        <p>The HTML DOM allows JavaScript to change both the text and the content of HTML elements.<br>
+            The easiest way to modify the content is by using the <b>innerHTML property</b>.<br>
+            <b>document.getElementById(id).innerHTML = new HTML</b></p>
+        
+        <p id = "p1">Hello World!</p> 
+        
+        <h1 id = "id01">Old Heading</h1>
+        <hr>
+
+        <h2><u>Changing an Attribute</u></h2>
+        <p>To change the value of an HTML attribute, use this syntax:<br>
+            <b>document.getElementById(id).attribute = new value</b></p>
+        <img id = "image" src = "images/landscape.jpg" width = "160" height = "130">  
+             <p>The original image was "landscape.jpg", but the script changed it to "smiley.gif".</p>
+        <hr>
+
+        <h2><u>Dynamic HTML content</u></h2>
+        <p id = "demo"></p>
+        <hr>
+
+        <h2>document.write()</h2>
+        <p>Hello JavaScript :)</p>
+        <hr>
+        
+        <script>
+        // innerHTML Property
+            document.getElementById("p1").innerHTML = "New Text!";
+
+            const element = document.getElementById("id01").innerHTML = "New Heading";
+    
+        // Changing an Attribute  
+           document.getElementById("image").src = "images/smiley.gif";
+
+        // Dynamic HTML content
+           document.getElementById("demo").innerHTML = "Date : " + Date();  
+
+        // document.write()
+        document.write(Date())   
+
+        </script> 
+    </body>
+</html>
