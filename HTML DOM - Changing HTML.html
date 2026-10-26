@@ -2,32 +2,79 @@
 <html>
     <head>
         <title>Changing HTML</title>
+
+        <style>
+            body {
+                background-color: #d9ffa4;
+                font-family: Arial, sans-serif;
+                max-width: 900px;
+                margin: 30px auto;
+                padding: 20px;
+            }
+
+            h2 {
+                color: #174a6e;
+                border-bottom: 2px solid #5aa6a6;
+                padding-bottom: 12px;
+            }
+
+            h3 {
+                color: #174a6e;
+                margin-top: 0;
+            }
+
+            .section {
+                background-color: white;
+                padding: 15px 20px;
+                margin: 20px 0;
+                border-radius: 6px;
+                border-left: 4px solid #5aa6a6;
+            }
+
+            p {
+                line-height: 1.6;
+            }
+
+            hr {
+                border: none;
+                border-top: 1px solid #d5dce5;
+                margin: 15px 0;
+            }
+        </style>
     </head>
+
     <body>
-        <h2><u>Changing HTML Content</u></h2>
-        <p>The HTML DOM allows JavaScript to change both the text and the content of HTML elements.<br>
-            The easiest way to modify the content is by using the <b>innerHTML property</b>.<br>
-            <b>document.getElementById(id).innerHTML = new HTML</b></p>
-        
-        <p id = "p1">Hello World!</p> 
-        
-        <h1 id = "id01">Old Heading</h1>
-        <hr>
 
-        <h2><u>Changing an Attribute</u></h2>
-        <p>To change the value of an HTML attribute, use this syntax:<br>
-            <b>document.getElementById(id).attribute = new value</b></p>
-        <img id = "image" src = "images/landscape.jpg" width = "160" height = "130">  
-             <p>The original image was "landscape.jpg", but the script changed it to "smiley.gif".</p>
-        <hr>
+        <h1 style = "color:rgb(3, 92, 24); text-align:center">Changing HTML</h1>
 
-        <h2><u>Dynamic HTML content</u></h2>
-        <p id = "demo"></p>
-        <hr>
+        <div class="section">
+            <h2>Changing HTML Content</h2>
+            <p>The HTML DOM allows JavaScript to change both the text and the content of HTML elements.<br>
+                The easiest way to modify the content is by using the <b>innerHTML property</b>.<br>
+                <b>document.getElementById(id).innerHTML = new HTML</b></p>
+            
+            <p id = "p1">Hello World!</p> 
+            
+            <h1 id = "id01">Old Heading</h1>
+        </div>
 
-        <h2>document.write()</h2>
-        <p>Hello JavaScript :)</p>
-        <hr>
+        <div class="section">
+            <h2>Changing an Attribute</h2>
+            <p>To change the value of an HTML attribute, use this syntax:<br>
+                <b>document.getElementById(id).attribute = new value</b></p>
+            <img id = "image" src = "images/landscape.jpg" width = "160" height = "130">  
+            <p>The original image was "landscape.jpg", but the script changed it to "smiley.gif".</p>
+        </div>
+
+        <div class="section">
+            <h2>Dynamic HTML content</h2>
+            <p id = "demo"></p>
+        </div>
+
+        <div class="section">
+            <h2>document.write()</h2>
+            <p>Hello JavaScript :)</p>
+        </div>
         
         <script>
         // innerHTML Property

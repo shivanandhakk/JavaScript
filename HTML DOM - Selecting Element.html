@@ -1,49 +1,89 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Selecting Elements in HTML DOM</title>
+        <title>HTML DOM - Selecting Elements</title>
+
+        <style>
+            body {
+                background-color: #d9ffa4;
+                font-family: Arial, sans-serif;
+                max-width: 900px;
+                margin: 30px auto;
+                padding: 20px;
+            }
+
+            h2 {
+                color: #174a6e;
+                text-align: center;
+                border-bottom: 2px solid #5aa6a6;
+                padding-bottom: 12px;
+            }
+
+            h3 {
+                color: #174a6e;
+                margin-top: 0;
+            }
+
+            .section {
+                background-color: white;
+                padding: 15px 20px;
+                margin: 20px 0;
+                border-radius: 6px;
+                border-left: 4px solid #5aa6a6;
+            }
+
+            p {
+                line-height: 1.6;
+            }
+
+        </style>
     </head>
+
 <body>
-    <h2><u>JavaScript HTML DOM</u></h2>
+
+    <h1 style = color:#174a6e><center>HTML DOM - Selecting Elements</center></h1>
     
-    <p id="intro">Finding HTML Elements by Id:</p>
-    <p>This example demonstrates the <b>getElementsById</b> method.</p>
-    <p id="demo1"></p>
-    <hr>
-
-    <h4>Finding HTML Elements by Tag Name:</h4>
-    <h4>This example demonstrates the <i>getElementsByTagName</i> method</h4>
-    <h4 id = "demo2"></h4>
-    <hr>
-
-    <div id = "main">
-        <p><b>Finding HTML Elements by Tag Name 2:</b></p>
-        <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+    <div class="section">
+        <h3>Finding HTML Elements by Id:</h3>
+        <p id="intro">HTML Elements by Id</p>
+        <p>This example demonstrates the <b>getElementsById</b> method.</p>
+        <p id="demo1" class="result"></p>
     </div>
-    <p id = "demo3"></p>
-    <hr>
 
-    <p><b>Finding HTML Elements by Class Name.</b></p>
-    <p class="intro">Hello World!</p>
-    <p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p>
-    <p id = "demo4"></p>
-    <hr>
+    <div class="section">
+        <h3>Finding HTML Elements by Tag Name:</h3>
+        <h4>This example demonstrates the <i>getElementsByTagName</i> method.</h4>
+        <h4 id = "demo2" class="result"></h4>
+    <hr> 
+        <div id = "main">
+            <p><b>HTML Elements by Tag Name</b></p>
+            <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+        </div>
+        <p id = "demo3" class="result"></p>
+    </div>
 
-    <p><b>Finding HTML Elements by CSS Selectors:</b></p>
-    <p><b>1.</b> querySelector() Method</p>
-    <p class = "demo5"></p>
-    <hr>
+    <div class="section">
+        <h3>Finding HTML Elements by Class Name:</h3>
+        <p class="intro">Hello World!</p>
+        <p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+        <p id = "demo4" class="result"></p>
+    </div>
 
-    <p><b>2.</b> querySelectorAll() Method</p>
-    <p class = "demo6">One</p>
-    <p class = "demo6">Two</p>
-    <hr>
+    <div class="section">
+        <h3>Finding HTML Elements by CSS Selectors:</h3>
+        <p><b>1.querySelector() Method</b></p>
+        <p class = "demo5"></p>
+    </div>
 
-    <p><b>2.</b> querySelectorAll() Method 2</p>
-    <P class = "intro6">Hello World!</P>
-    <p class = "intro6">This example demonstrates the <b>querySelectorAll</b> method.</P>
-    <p id = "demo6"></p>
-    <hr>
+    <div class="section">
+        <p><b>2.querySelectorAll() Method</b></p>
+        <p class = "demo6">One</p>
+        <p class = "demo6">Two</p>
+        <hr>
+        <P class = "intro6">Hello World!</P>
+        <p class = "intro6">This example demonstrates the <b>querySelectorAll</b> method.</P>
+        <p id = "demo6" class="result"></p>
+    </div>
     
     <script>
     // HTML Elements by Id
@@ -72,7 +112,8 @@
           
        const z = document.querySelectorAll("p.intro");
        document.getElementById("demo6").innerHTML = 
-       'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML;
+       'The first paragraph (index 0) with class="intro" is: ' + z[0].innerHTML;
     </script>
-    </body>
+
+</body>
 </html>
