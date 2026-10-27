@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Form Validation</title>
+
+        <style>
+            body {
+                background-color: #d9ffa4;
+            }
+        </style>
+
+        <script>
+            function validateForm() {
+                let x = document.forms["myForm"]["fname"].value;
+                if (x == "") {
+                    alert("Name must be filled out");
+                    return false;
+                } 
+            }
+
+        //Validate Numeric Input
+            function myFunction() {
+              // Get the value of the input field with id="numb"
+                let x = document.getElementById("numb").value;
+                let text;
+                if (isNaN(x) || x < 1 || x > 10) {
+                    text = "Input not valid";
+                } else {
+                    text = "Input Ok";
+                }
+
+                document.getElementById("demo").innerHTML = text;
+            }            
+          
+        </script>
+    </head>
+    <body>
+        <h1 style = "color:rgb(3, 92, 24);">JavaScript Form Validation</h2>
+
+        <form name = "myForm" action = "/action_page.php" onsubmit = "return validateForm()" method = "post">
+            Name: <input type = "text" name = "fname">
+            <input type = "submit" value = "Submit">
+        </form> 
+        <br> <hr>
+
+        <p>Please input a number between 1 and 10:</p>  
+        <input id = "numb">
+
+        <button type = "button" onclick = "myFunction()">Submit</button>
+        <p id = "demo"></p>
+        <br> <hr>
+
+        <h2>Automatic Form Validation</h2>
+        <form action = "/action_page.php" method = "post">
+            <input type = "text" name = "fname" required>
+            <input type = "submit" value = "Submit">
+        </form>
+        <p>If you click submit, without filling out the text field,
+            your browser will display an error message.</p>
+        <hr>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML DOM - Changing CSS</title>
+
+        <style>
+            body {
+                background-color: #d9ffa4;
+                font-family: Arial, sans-serif;
+                max-width: 900px;
+                margin: 30px auto;
+                padding: 20px;
+            }
+
+            h2 {
+                color: #174a6e;
+                border-bottom: 2px solid #5aa6a6;
+                padding-bottom: 12px;
+            }
+
+            h3 {
+                color: #174a6e;
+                margin-top: 0;
+            }
+
+            .section {
+                background-color: white;
+                padding: 15px 20px;
+                margin: 20px 0;
+                border-radius: 6px;
+                border-left: 4px solid #5aa6a6;
+            }
+
+            p {
+                line-height: 1.6;
+            }
+
+            hr {
+                border: none;
+                border-top: 1px solid #d5dce5;
+                margin: 15px 0;
+            }
+
+            button, input[type="button"] {
+                padding: 8px 14px;
+                margin: 5px 5px 5px 0;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 style = "color:rgb(3, 92, 24); text-align:center">HTML DOM - Changing CSS</h1>
+
+        <div class="section">
+            <h2>Changing HTML Style</h2>
+            <p>The HTML DOM allows JavaScript to change the style of HTML elements.<br>
+                To change the style of an HTML element, use this syntax:<br>
+                <b>document.getElementById(id).style.property= new style</b></p>
+            <p id = "p1">Hello World!</p>
+            <p id = "p2">Hello World!</p>
+        </div>
+
+        <div class="section">
+            <h2>Using Events</h2>
+            <h1 id = "id1">My heading 1</h1>
+            <button type=" button" onclick="document.getElementById('id1').style.color = 'red'">
+                Click Me!
+            </button>
+        </div>
+
+        <div class="section">
+            <p id = "t1">
+                This is a text.
+                This is a text.
+                This is a text.
+                This is a text.
+            </p>
+            <input type = "button" value = "Hidden text"
+            onclick="document.getElementById('t1').style.visibility='hidden'">
+            <input type="button" value="Show text" onclick="document.getElementById('t1').style.visibility='visible'">
+        </div>
+
+        <script>
+        // Changing HTML Style
+            document.getElementById("p2").style.color = "blue";
+            document.getElementById("p2").style.fontFamily = "Arial";
+            document.getElementById("p2").style.fontSize = "larger";
+
+        </script>
+    </body>
+</html>
